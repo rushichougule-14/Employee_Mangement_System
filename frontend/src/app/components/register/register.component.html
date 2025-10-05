@@ -1,0 +1,103 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow-lg p-4 rounded-4" style="max-width: 400px; width: 150%;">
+    <div class="card-body">
+          <h3 class="text-center fw-bold text-primary">Sign Up</h3>
+          <form [formGroup]="signupForm" (ngSubmit)="onSignUp()">
+            <!-- Full Name -->
+            <div class="form-group mb-3">
+              <label for="fullName">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                formControlName="fullName"
+                class="form-control"
+                placeholder="Enter your name"
+                required
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  signupForm.get('fullName')?.touched &&
+                  signupForm.get('fullName')?.invalid
+                "
+              >
+                <small *ngIf="signupForm.get('fullName')?.errors?.['required']"
+                  >Full Name is required</small
+                >
+              </div>
+            </div>
+            <!-- Email -->
+            <div class="form-group mb-3">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                class="form-control"
+                placeholder="Enter your email"
+                required
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  signupForm.get('email')?.touched &&
+                  signupForm.get('email')?.invalid
+                "
+              >
+                <small *ngIf="signupForm.get('email')?.errors?.['required']"
+                  >Email is required</small
+                >
+              </div>
+            </div>
+            <!-- Password -->
+            <div class="form-group mb-3">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                formControlName="password"
+                class="form-control"
+                placeholder="Enter your password"
+                required
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  signupForm.get('password')?.touched &&
+                  signupForm.get('password')?.invalid
+                "
+              >
+                <small *ngIf="signupForm.get('password')?.errors?.['required']"
+                  >Password is required</small
+                >
+                <small *ngIf="signupForm.get('password')?.errors?.['minlength']"
+                  >Min 3 letters are required!</small
+                >
+                <small *ngIf="signupForm.get('password')?.errors?.['maxlength']"
+                  >Max 15 letters are allowed!</small
+                >
+                <small *ngIf="signupForm.get('password')?.errors?.['pattern']">
+                  Password must contain at least 1 uppercase letter, 1 lowercase
+                  letter, and 1 number
+                </small>
+              </div>
+            </div>
+            <!-- Submit -->
+            <button
+              type="submit"
+              class="btn btn-primary w-100 rounded-pill"
+              [disabled]="signupForm.invalid"
+            >
+              Sign Up
+            </button>
+          </form>
+          <div class="text-center mt-3">
+            <p>
+              Already have an account?
+              <a routerLink="/login" class="text-decoration-none">Login</a>
+            </p>
+
+      </div>
+    </div>
+  </div>
+</div>

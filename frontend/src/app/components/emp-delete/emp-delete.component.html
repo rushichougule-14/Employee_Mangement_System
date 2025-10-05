@@ -1,0 +1,24 @@
+
+
+<div mat-dialog-title class="flex items-center gap-2 text-red-600 text-lg font-semibold">
+  <mat-icon color="warn">warning</mat-icon>
+  Confirm Delete
+</div>
+
+
+
+<div class="modal-body">
+<mat-dialog-content class="text-gray-700 mt-2">
+  <p>
+    Are you sure you want to <b class="text-red-600">delete</b> this employee?
+  </p>
+</mat-dialog-content>
+</div>
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button class="btn btn-secondary" (click)="onNoClick()">
+    <mat-icon>close</mat-icon> Cancel
+  </button>
+  <button class="btn btn-danger" (click)="onYesClick()">
+    <mat-icon>delete</mat-icon> Delete
+  </button>
+</mat-dialog-actions>

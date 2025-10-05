@@ -1,0 +1,62 @@
+/* Page background */
+body {
+  background-color: #f7f9fc;
+}
+
+/* Search input styling */
+.search-input {
+  width: 250px;
+  border-radius: 25px;
+  padding: 6px 15px;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 8px rgba(37, 117, 252, 0.3);
+  outline: none;
+}
+
+/* Card & table design */
+.card {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 2px;
+}
+
+.table thead {
+  background: #eef3fb;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.table-row {
+  transition: all 0.3s ease;
+}
+
+.table-row:hover {
+  background-color: #f1f6ff;
+  transform: scale(1.01);
+}
+
+/* Buttons */
+.btn {
+  border-radius: 20px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Title */
+h2 {
+  letter-spacing: 0.5px;
+  font-family: "Poppins", sans-serif;
+}
